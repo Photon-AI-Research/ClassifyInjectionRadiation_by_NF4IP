@@ -1,0 +1,70 @@
+### LWFA Configuration Settings
+
+log.colorlog:
+  #file: lwfa.log
+  to_console: True
+
+
+lwfa:
+  foo: foofoo
+
+vae:
+  load: ./data/input/vae_best_trial_long_2_3_85
+nf4ip:
+  lr: 0.00005
+  n_epochs: 3000
+  num_blocks: 1
+  feature: 88
+  batch_size: 20
+  validate_every_epochs: 5
+  checkpoint_every_epochs: 5
+  retain_graph: True
+  random_seed: 1234
+inn:
+  lambd_predict: 7.0
+  lambd_latent: 416.0
+  lambd_rev: 243.0
+  ndim_z: 47
+  ndim_pad: 0
+
+### Toggle application level debug (does not toggle framework debugging)
+# debug: false
+
+### Where external (third-party) plugins are loaded from
+# plugin_dir: /var/lib/lwfa/plugins/
+
+### Where all plugin configurations are loaded from
+# plugin_config_dir: /etc/lwfa/plugins.d/
+
+### Where external templates are loaded from
+# template_dir: /var/lib/lwfa/templates/
+
+### The log handler label
+# log_handler: colorlog
+
+### The output handler label
+# output_handler: jinja2
+
+### sample foo option
+# foo: bar
+
+
+#log.colorlog:
+
+### Where the log file lives (no log file by default)
+# file: null
+
+### The level for which to log.  One of: info, warning, error, fatal, debug
+# level: info
+
+### Whether or not to log to console
+# to_console: true
+
+### Whether or not to rotate the log file when it reaches `max_bytes`
+# rotate: false
+
+### Max size in bytes that a log file can grow until it is rotated.
+# max_bytes: 512000
+
+### The maximun number of log files to maintain when rotating
+# max_files: 4
